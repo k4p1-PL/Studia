@@ -2,9 +2,9 @@
 
 Zadanie: Wieloetapowe budowanie obrazów (Multi-stage build) z wykorzystaniem obrazu bazowego scratch oraz Nginx.
 
----
 
-## -------------------------------------- 1. Treść pliku Dockerfile --------------------------------------
+
+##  1. Treść pliku Dockerfile 
 
 Poniżej znajduje się kod pliku `Dockerfile` realizującego architekturę Reverse Proxy (aplikacja w Go + serwer Nginx).
 
@@ -66,9 +66,9 @@ CMD ["/start.sh"]
 
 
 
-## -------------------------------------- 2. Komendy i output --------------------------------------
+## 2. Komendy i output 
 
-## --------------------------------------docker build --build-arg VERSION=v3.0.0 --------------------------------------
+## docker build --build-arg VERSION=v3.0.0 
 
 PS C:\Users\kacpe\lab5> docker build --build-arg VERSION=v3.0.0 -t lab5-proxy-app:v1 .
 [+] Building 2.4s (17/17) FINISHED                                                                                         docker:desktop-linux
@@ -105,7 +105,7 @@ View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux
 
 
 
-## -------------------------------------- docker run -d -p 8080:80 --name --------------------------------------
+##  docker run -d -p 8080:80 --name 
 
 PS C:\Users\kacpe\lab5> docker run -d -p 8080:80 --name proxy-test lab5-proxy-app:v1
 bb15ec7c105cd1b977c7146744521ce28ec80675c0837949277c9f8740e7844e
@@ -113,7 +113,7 @@ bb15ec7c105cd1b977c7146744521ce28ec80675c0837949277c9f8740e7844e
 
 
 
-## -------------------------------------- curl http://localhost:8080 --------------------------------------
+##  curl http://localhost:8080 
 
 PS C:\Users\kacpe\lab5> curl http://localhost:8080
                                                                                                                                                 Security Warning: Script Execution Risk                                                                                                         Invoke-WebRequest parses the content of the web page. Script code in the web page might be run when the page is parsed.                               RECOMMENDED ACTION:                                                                                                                       
@@ -147,7 +147,7 @@ RawContentLength  : 116
 
 
 
-## -------------------------------------- docker ps --filter name=proxy-test --------------------------------------
+##  docker ps --filter name=proxy-test 
 
 PS C:\Users\kacpe\lab5> docker ps --filter name=proxy-test
 CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS                    PORTS                                    
